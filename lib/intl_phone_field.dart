@@ -249,6 +249,8 @@ class IntlPhoneField extends StatefulWidget {
   /// If null, default magnification configuration will be used.
   final TextMagnifierConfiguration? magnifierConfiguration;
 
+  final void Function(PointerDownEvent)? onTapOutside;
+
   const IntlPhoneField({
     Key? key,
     this.formFieldKey,
@@ -262,6 +264,7 @@ class IntlPhoneField extends StatefulWidget {
     this.readOnly = false,
     this.initialValue,
     this.keyboardType = TextInputType.phone,
+    this.onTapOutside,
     this.controller,
     this.focusNode,
     this.decoration = const InputDecoration(),
@@ -391,6 +394,7 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
       textAlignVertical: widget.textAlignVertical,
       cursorColor: widget.cursorColor,
       onTap: widget.onTap,
+      onTapOutside: widget.onTapOutside,
       controller: widget.controller,
       focusNode: widget.focusNode,
       cursorHeight: widget.cursorHeight,
